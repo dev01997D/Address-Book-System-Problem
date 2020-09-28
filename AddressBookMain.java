@@ -30,7 +30,5 @@ public class AddressBookMain {
         
         //Object of Contact class
         Contact contactObj=new Contact(firstName,lastName,address,cityName,zipNumber,phoneNumber,emailId);
-        //Invoking addContact method in AddressBookLog
-        addressLogObj.addContact(contactObj);
 	}
 }
