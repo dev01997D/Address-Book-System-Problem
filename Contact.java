@@ -63,4 +63,7 @@ public class Contact {
 		this.phoneNumber=phoneNumber;
 		this.emailId=emailId;
 	}
+	public Contact() {
+		
+	}
 }

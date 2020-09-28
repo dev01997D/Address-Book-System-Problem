@@ -3,8 +3,6 @@ package com.bridgelabz.addressbooksystem;
 import java.util.*;
 
 public class AddressBookLog {
-	static boolean checker = false;
-	//ArrayList can contaion only Contact object
 	private List<Contact> addressBook = new ArrayList<Contact>();
 
 	//Getters and Setters
@@ -19,7 +17,6 @@ public class AddressBookLog {
 		addressBook.add(contactObj);
 	}
 	public void editContactDetails(String firstNameEdit){
-		//List<Contact> editedContact=new ArrayList<Contact>();
 		int i=0;
 		for(Contact c:addressBook){
 			if((c.getFirstName()).equals(firstNameEdit))
@@ -44,7 +41,8 @@ public class AddressBookLog {
 	}
 	public void printContactDetails() {
 		for(Contact c:addressBook){
-			System.out.println("First name: "+c.getFirstName()+" Last name: "+c.getLastName()+" Address: "+c.getAddress()+" City Name: "+c.getCityName()+" Zip Number: "+c.getZipNumber()+" Phone Number: "+c.getPhoneNumber()+" Email Id: "+c.getEmailId());
+			System.out.println("First name: "+c.getFirstName()+" Last name: "+c.getLastName()+" Address: "+c.getAddress()
+			                    +" City Name: "+c.getCityName()+" Zip Number: "+c.getZipNumber()+" Phone Number: "+c.getPhoneNumber()+" Email Id: "+c.getEmailId());
 		}
 	}
 }
