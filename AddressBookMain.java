@@ -9,42 +9,54 @@ public class AddressBookMain {
 
 		//contact AddressBookLog object
 		AddressBookLog addressLogObj=new AddressBookLog();
-		
+
 		//Variables
 		int zipNumber;
-		String firstName, lastName,address,cityName,emailId;
+		String firstName, firstNameEdit, lastName,address,cityName,emailId;
 		long phoneNumber;
-		char choice=' ';
+		int choice=0;
 
 		Scanner sc = new Scanner(System.in);
-		
+
 		do {
-		System.out.println("Add a Contact:");
-		System.out.println("Enter the First Name:");
-		firstName = sc.nextLine();
-		System.out.println("Enter the Last Name:");
-		lastName = sc.nextLine();
-		System.out.println("Enter the Address");
-		address=sc.nextLine();
-		System.out.println("Enter the City Name");
-		cityName=sc.nextLine();
-		System.out.println("Enter the Zip Number of Address");
-		zipNumber=sc.nextInt();
-		System.out.println("Enter the Phone No:");
-		phoneNumber = sc.nextLong();
-		System.out.println("Enter the Email:");
-		sc.nextLine();
-		emailId = sc.nextLine();
-		
-		//Object of Contact class
-		Contact contactObj=new Contact(firstName,lastName,address,cityName,zipNumber,phoneNumber,emailId);
-		//Invoking addContact method in AddressBookLog
-		addressLogObj.addContact(contactObj);
-		
-		System.out.println("Do you want to enter another contact details, Enter 'Y' for yes and 'N' for not.");
-		choice=sc.next().charAt(0);	
-		sc.nextLine();
+			System.out.println("Please Enter from the Menu.\n1. Add a Contact: \n2. Delete a contact using the First Name: \n3. Exit");
+			choice=sc.nextInt();
+			switch (choice) {
+			case 1:
+				System.out.println("Enter the First Name:");
+				firstName = sc.nextLine();
+				System.out.println("Enter the Last Name:");
+				lastName = sc.nextLine();
+				System.out.println("Enter the Address");
+				address=sc.nextLine();
+				System.out.println("Enter the City Name");
+				cityName=sc.nextLine();
+				System.out.println("Enter the Zip Number of Address");
+				zipNumber=sc.nextInt();
+				System.out.println("Enter the Phone No:");
+				phoneNumber = sc.nextLong();
+				System.out.println("Enter the Email:");
+				sc.nextLine();
+				emailId = sc.nextLine();
+
+				//Object of Contact class
+				Contact contactObj=new Contact(firstName,lastName,address,cityName,zipNumber,phoneNumber,emailId);
+				//Invoking addContact method in AddressBookLog
+				addressLogObj.addContact(contactObj);
+				break;
+			case 2:
+				System.out.println("Enter the First Name of the contact you want to edit:");
+				firstNameEdit=sc.nextLine();
+				addressLogObj.editContactDetails(firstNameEdit);
+				System.out.println("Contact details updated SuccessFully.");
+				break;
+			default:
+				System.exit(0);
+			}
+			System.out.println("Do you want to enter another contact details, Enter 'Y' for yes and 'N' for not.");
+			choice=sc.next().charAt(0);	
+			sc.nextLine();
 		}
-		while(choice=='y' || choice=='Y');
+		while(choice!=3);
 	}
 }
