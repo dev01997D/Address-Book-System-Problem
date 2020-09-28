@@ -46,6 +46,5 @@ public class AddressBookMain {
 		sc.nextLine();
 		}
 		while(choice=='y' || choice=='Y');
-
 	}
 }
