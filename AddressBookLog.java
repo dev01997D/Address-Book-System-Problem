@@ -31,5 +31,20 @@ public class AddressBookLog {
 			i+=1;
 		}
 	}
-	
+	public void deleteContactDetails(String firstNameDelete) {
+		int i=0;
+		for(Contact c:addressBook){
+			if((c.getFirstName()).equals(firstNameDelete))
+			{
+				addressBook.remove(i+1);
+				break;
+			}
+			i+=1;
+		}
+	}
+	public void printContactDetails() {
+		for(Contact c:addressBook){
+			System.out.println("First name: "+c.getFirstName()+" Last name: "+c.getLastName()+" Address: "+c.getAddress()+" City Name: "+c.getCityName()+" Zip Number: "+c.getZipNumber()+" Phone Number: "+c.getPhoneNumber()+" Email Id: "+c.getEmailId());
+		}
+	}
 }

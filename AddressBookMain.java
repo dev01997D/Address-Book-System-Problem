@@ -11,17 +11,18 @@ public class AddressBookMain {
 		AddressBookLog addressLogObj=new AddressBookLog();
 
 		//Variables
-		int zipNumber;
-		String firstName, firstNameEdit, lastName,address,cityName,emailId;
+		int zipNumber, selectMenu;
+		String firstName, firstNameEdit, firstNameDelete, lastName,address,cityName,emailId;
 		long phoneNumber;
-		int choice=0;
+		char choice=' ';
 
 		Scanner sc = new Scanner(System.in);
 
 		do {
-			System.out.println("Please Enter from the Menu.\n1. Add a Contact: \n2. Delete a contact using the First Name: \n3. Exit");
-			choice=sc.nextInt();
-			switch (choice) {
+			System.out.println("Please Enter from the Menu.\n1. Add a Contact: \n2. Edit a contact using the First Name: \n3. Delete a Contact using first name. \n4. Print all the contact details \n5. Exit");
+			selectMenu=sc.nextInt();
+			sc.nextLine();
+			switch (selectMenu) {
 			case 1:
 				System.out.println("Enter the First Name:");
 				firstName = sc.nextLine();
@@ -50,6 +51,14 @@ public class AddressBookMain {
 				addressLogObj.editContactDetails(firstNameEdit);
 				System.out.println("Contact details updated SuccessFully.");
 				break;
+			case 3:
+				System.out.println("Enter the First Name of the contact you want to Delete:");
+				firstNameDelete=sc.nextLine();
+				addressLogObj.deleteContactDetails(firstNameDelete);
+				System.out.println("Contact details deleted SuccessFully.");
+				break;	
+			case 4:
+				addressLogObj.printContactDetails();
 			default:
 				System.exit(0);
 			}
@@ -57,6 +66,6 @@ public class AddressBookMain {
 			choice=sc.next().charAt(0);	
 			sc.nextLine();
 		}
-		while(choice!=3);
+		while(choice=='y' || choice=='Y');
 	}
 }
