@@ -9,58 +9,74 @@ public class Contact {
 	private long phoneNumber;
 	private String emailId;
 
-	//Getters And Setters
+	// Getters And Setters
 	public String getFirstName() {
 		return firstName;
 	}
+
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+
 	public String getLastName() {
 		return lastName;
 	}
+
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	public String getAddress() {
 		return address;
 	}
+
 	public void setAddress(String address) {
-		this.address=address;
+		this.address = address;
 	}
+
 	public String getCityName() {
 		return cityName;
 	}
+
 	public void setCityName(String cityName) {
-		this.cityName=cityName;
+		this.cityName = cityName;
 	}
+
 	public int getZipNumber() {
 		return zipNumber;
 	}
+
 	public void setZipNumber(int zipNumber) {
-		this.zipNumber=zipNumber;
+		this.zipNumber = zipNumber;
 	}
+
 	public long getPhoneNumber() {
 		return phoneNumber;
 	}
+
 	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
+
 	public String getEmailId() {
 		return emailId;
 	}
+
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	
-	//Parametrized Constructor
+
+	// Parametrized Constructor
 	public Contact(String firstName, String lastName, String address, String cityName, int zipNumber, long phoneNumber, String emailId) {
-		this.firstName=firstName;
-		this.lastName=lastName;
-		this.address=address;
-		this.cityName=cityName;
-		this.zipNumber=zipNumber;
-		this.phoneNumber=phoneNumber;
-		this.emailId=emailId;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.address = address;
+		this.cityName = cityName;
+		this.zipNumber = zipNumber;
+		this.phoneNumber = phoneNumber;
+		this.emailId = emailId;
+	}
+
+	public Contact() {
 	}
 }
