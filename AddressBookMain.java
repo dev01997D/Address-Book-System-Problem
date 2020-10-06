@@ -34,7 +34,7 @@ public class AddressBookMain {
 
 					System.out.println(
 							"Please Select From Menu: \n1 : Add Contact to Address Book\n2 : Update Existing Contact\n3 : Remove Contact"
-									+ "\n4 : Search details of a Contact \n5 : Print contact details\n6. Exit");
+									+ "\n4 : Search details of a Contact \n5 : Print contact details \n6 : Veiw Persons by State \n7 :Exit");
 					option = sc.nextInt();
 
 					switch (option) {
@@ -151,10 +151,14 @@ public class AddressBookMain {
 					case 5:
 						addressBookObj.printContactDetails();
 						break;
+					case 6:
+						System.out.println("Enter the city Name:");
+						String cityNameView=sc.next();
+						addressBookObj.veiwPersonsByCityName(cityNameView);
 					default:
 						break;
 					}
-				} while (option != 6);
+				} while (option != 8);
 			} else
 				System.exit(0);
 		}
