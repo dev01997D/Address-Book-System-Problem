@@ -54,10 +54,31 @@ public class AddressBook {
 	}
 
 	public void printContactDetails() {
-		for (Contact c : addressBook) {
-			System.out.println("First name: " + c.getFirstName() + " Last name: " + c.getLastName() + " Address: "
-					+ c.getAddress() + " City Name: " + c.getCityName() + " Zip Number: " + c.getZipNumber()
-					+ " Phone Number: " + c.getPhoneNumber() + " Email Id: " + c.getEmailId());
+		if (addressBook.isEmpty()) {
+			System.out.println("No details has been added till Now. Please add some details first!");
+		} else {
+			for (Contact c : addressBook) {
+				System.out.println("First name: " + c.getFirstName() + " Last name: " + c.getLastName() + " Address: "
+						+ c.getAddress() + " City Name: " + c.getCityName() + " Zip Number: " + c.getZipNumber()
+						+ " Phone Number: " + c.getPhoneNumber() + " Email Id: " + c.getEmailId());
+			}
 		}
+	}
+
+	public void searchContactDetails(String firstNameSearch, String lastNameSearch) {
+		boolean search = false;
+		for (Contact contact : addressBook) {
+			if (contact.getFirstName().equals(firstNameSearch) && contact.getLastName().equals(lastNameSearch)) {
+				System.out.println("The Details of the Contact are given Below:");
+				System.out.println("First name: " + contact.getFirstName() + " Last name: " + contact.getLastName()
+						+ " Address: " + contact.getAddress() + " City Name: " + contact.getCityName() + " Zip Number: "
+						+ contact.getZipNumber() + " Phone Number: " + contact.getPhoneNumber() + " Email Id: "
+						+ contact.getEmailId());
+				search = true;
+				break;
+			}
+		}
+		if (search == false)
+			System.out.println("No contact details found with these Details");
 	}
 }
