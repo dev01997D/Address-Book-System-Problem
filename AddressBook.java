@@ -70,18 +70,6 @@ public class AddressBook {
 			System.out.println("No contact details found with these Details");
 	}
 
-	public void printContactDetails() {
-		if (addressBook.isEmpty()) {
-			System.out.println("No details has been added till Now. Please add some details first!");
-		} else {
-			for (Contact c : addressBook) {
-				System.out.println("First name: " + c.getFirstName() + " Last name: " + c.getLastName() + " Address: "
-						+ c.getAddress() + " City Name: " + c.getCityName() + " Zip Number: " + c.getZipNumber()
-						+ " Phone Number: " + c.getPhoneNumber() + " Email Id: " + c.getEmailId());
-			}
-		}
-	}
-
 	public void veiwPersonsByCityName(String cityNameView) {
 		ArrayList<Contact> cityList = new ArrayList<>();
 		for (Contact contact : addressBook) {
@@ -94,6 +82,30 @@ public class AddressBook {
 		} else {
 			for (Contact c : cityList) {
 				System.out.println("The Details of the Contact of city : " + c.getCityName() + "are given Below:");
+				System.out.println("First name: " + c.getFirstName() + " Last name: " + c.getLastName() + " Address: "
+						+ c.getAddress() + " City Name: " + c.getCityName() + " Zip Number: " + c.getZipNumber()
+						+ " Phone Number: " + c.getPhoneNumber() + " Email Id: " + c.getEmailId());
+			}
+		}
+	}
+
+	public void countNumberOfContactsByCity(String cityNameContactCount) {
+		int count=0;
+		for (Contact contact : addressBook) {
+			if(contact.getCityName().equalsIgnoreCase(cityNameContactCount))
+				count++;
+		}
+		if (count!=0)
+			System.out.println("No contact detail from the given city found!");
+		else
+			System.out.println("Number of contacts from the Given City are : "+count);
+	}
+	
+	public void printContactDetails() {
+		if (addressBook.isEmpty()) {
+			System.out.println("No details has been added till Now. Please add some details first!");
+		} else {
+			for (Contact c : addressBook) {
 				System.out.println("First name: " + c.getFirstName() + " Last name: " + c.getLastName() + " Address: "
 						+ c.getAddress() + " City Name: " + c.getCityName() + " Zip Number: " + c.getZipNumber()
 						+ " Phone Number: " + c.getPhoneNumber() + " Email Id: " + c.getEmailId());

@@ -34,7 +34,8 @@ public class AddressBookMain {
 
 					System.out.println(
 							"Please Select From Menu: \n1 : Add Contact to Address Book\n2 : Update Existing Contact\n3 : Remove Contact"
-									+ "\n4 : Search details of a Contact \n5 : Print contact details \n6 : Veiw Persons by State \n7 :Exit");
+									+ "\n4 : Search details of a Contact \n5 : Print contact details \n6 : Veiw Persons by CityName "
+									+ "\n7 : Number of Contacts In Given City \n8 : Exit");
 					option = sc.nextInt();
 
 					switch (option) {
@@ -155,6 +156,12 @@ public class AddressBookMain {
 						System.out.println("Enter the city Name:");
 						String cityNameView=sc.next();
 						addressBookObj.veiwPersonsByCityName(cityNameView);
+						break;
+					case 7:
+						System.out.println("Enter the city Name:");
+						String cityNameContactCount=sc.next();
+						addressBookObj.countNumberOfContactsByCity(cityNameContactCount);
+						break;
 					default:
 						break;
 					}
